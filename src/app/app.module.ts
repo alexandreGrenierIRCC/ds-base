@@ -13,6 +13,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/locales/', '.json');
 }
+
 @NgModule({
   declarations: [
     AppComponent
@@ -20,15 +21,17 @@ export function createTranslateLoader(http: HttpClient) {
   imports: [
     BrowserModule,
     PageModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: createTranslateLoader,
-        deps: [HttpClient]
-      }
-    }),
     AppRoutingModule,
     SharedModule,
+     // ngx-translate and the loader module
+     HttpClientModule,
+     TranslateModule.forRoot({
+       loader: {
+         provide: TranslateLoader,
+         useFactory: createTranslateLoader,
+         deps: [HttpClient]
+       }
+     }),
   ],
   providers: [],
   bootstrap: [AppComponent]
