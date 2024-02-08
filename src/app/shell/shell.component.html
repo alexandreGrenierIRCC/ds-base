@@ -1,0 +1,33 @@
+<div>
+  <div class="header">
+    <ircc-cl-lib-header
+      [id]="'header'"
+      [themeToggle]="false"
+    >
+      <div
+        class="container"
+        headerContent
+      >
+        
+          Heading
+       
+      </div>
+    </ircc-cl-lib-header>
+  </div>
+  <main>
+    <div class="main-container top">
+      <div class="content-router-outlet">
+        <div class="content-area-responsive">
+          <div class="page-content">
+            body
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Footer -->
+  <div class="footer">
+    Footer
+   </div>
+</div>
